@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 1991, 2022 IBM Corp. and others
+ * Copyright (c) 1991, 2023 IBM Corp. and others
  *
  * This program and the accompanying materials are made available under
  * the terms of the Eclipse Public License 2.0 which accompanies this
@@ -985,20 +985,6 @@ public:
 		return scavengerEnabled;
 #else /* defined(OMR_GC_MODRON_SCAVENGER) */
 		return false;
-#endif /* defined(OMR_GC_MODRON_SCAVENGER) */
-	}
-
-	virtual void registerScavenger(MM_Scavenger *scavenger)
-	{
-#if defined(OMR_GC_MODRON_SCAVENGER)
-		this->scavenger = scavenger;
-#endif /* defined(OMR_GC_MODRON_SCAVENGER) */
-	}
-
-	virtual void unregisterScavenger()
-	{
-#if defined(OMR_GC_MODRON_SCAVENGER)
-		scavenger = NULL;
 #endif /* defined(OMR_GC_MODRON_SCAVENGER) */
 	}
 

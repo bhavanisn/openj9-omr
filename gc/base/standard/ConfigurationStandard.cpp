@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 1991, 2022 IBM Corp. and others
+ * Copyright (c) 1991, 2023 IBM Corp. and others
  *
  * This program and the accompanying materials are made available under
  * the terms of the Eclipse Public License 2.0 which accompanies this
@@ -102,7 +102,7 @@ MM_ConfigurationStandard::initialize(MM_EnvironmentBase* env)
  * Create the global collector for a Standard configuration
  */
 MM_GlobalCollector*
-MM_ConfigurationStandard::createGlobalCollector(MM_EnvironmentBase* env)
+MM_ConfigurationStandard::createCollectors(MM_EnvironmentBase* env)
 {
 #if defined(OMR_GC_MODRON_CONCURRENT_MARK) || defined(OMR_GC_MODRON_CONCCURENT_SWEEP)
 	MM_GCExtensionsBase *extensions = env->getExtensions();
