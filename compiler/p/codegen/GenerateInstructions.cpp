@@ -82,7 +82,7 @@ TR::Instruction *generateMvFprGprInstructions(TR::CodeGenerator *cg, TR::Node *n
    else if (checkp8DirectMove && mode == fpr2gprSp)
       {
       cursor = generateTrg1Src1Instruction(cg, TR::InstOpCode::xscvdpspn, node, reg1, reg1, cursor);
-      cursor = generateTrg1Src1ImmInstruction(cg, TR::InstOpCode::xxspltw, node, reg1, reg1, 0, cursor);
+      //cursor = generateTrg1Src1ImmInstruction(cg, TR::InstOpCode::xxspltw, node, reg1, reg1, 0, cursor);
       cursor = generateTrg1Src1Instruction(cg, TR::InstOpCode::mfvsrwz, node, reg0, reg1, cursor);
       }
    else if (checkp8DirectMove && mode == gpr2fprHost64)
@@ -97,7 +97,7 @@ TR::Instruction *generateMvFprGprInstructions(TR::CodeGenerator *cg, TR::Node *n
       {
       cursor = generateTrg1Src1Instruction(cg, TR::InstOpCode::mtvsrwz, node, reg0, reg1, cursor);
       cursor = generateTrg1Src1ImmInstruction(cg, TR::InstOpCode::xxspltw, node, reg0, reg0, 1, cursor);
-      cursor = generateTrg1Src1Instruction(cg, TR::InstOpCode::xscvspdp, node, reg0, reg0, cursor);
+      cursor = generateTrg1Src1Instruction(cg, TR::InstOpCode::xscvspdpn, node, reg0, reg0, cursor);
       }
    else if (checkp8DirectMove && mode == gpr2fprHost32)
       {
