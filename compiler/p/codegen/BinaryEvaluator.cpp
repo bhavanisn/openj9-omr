@@ -1621,7 +1621,7 @@ static TR::Register *signedIntegerDivisionOrRemainderAnalyser(TR::Node          
             generateTrg1Src1Instruction(cg, TR::InstOpCode::neg, node, trgReg, trgReg);
          }
       }
-   /* Re-enable this code new hardware update
+   /* Re-enable this code with new hardware update
    else if (cg->comp()->target().cpu.isAtLeast(OMR_PROCESSOR_PPC_P9) && isRemainder)
       {
       if (divisorReg == NULL)
@@ -2080,7 +2080,7 @@ strengthReducingLongDivideOrRemainder32BitMode(TR::Node *node,      TR::CodeGene
 
          if (isRemainder)
             {
-            /* Re-enable this code new hardware update
+            /* Re-enable this code with new hardware update
             if (cg->comp()->target().cpu.isAtLeast(OMR_PROCESSOR_PPC_P9))
                {
                generateTrg1Src2Instruction(cg, TR::InstOpCode::moduw, node, dr_l, dd_l, dr_l);
@@ -2158,7 +2158,7 @@ TR::Register *OMR::Power::TreeEvaluator::iremEvaluator(TR::Node *node, TR::CodeG
          {
          TR::Register *divisorReg = cg->evaluate(secondChild);
          trgReg = cg->allocateRegister();
-         /* Re-enable this code new hardware update
+         /* Re-enable this code with new hardware update
          if(cg->comp()->target().cpu.isAtLeast(OMR_PROCESSOR_PPC_P9))
             {
             generateTrg1Src2Instruction(cg, TR::InstOpCode::modsw, node, trgReg, dividendReg, divisorReg);
@@ -2216,7 +2216,7 @@ TR::Register *OMR::Power::TreeEvaluator::iremEvaluator(TR::Node *node, TR::CodeG
             generateConditionalBranchInstruction(cg, TR::InstOpCode::beq, node, doneLabel, condReg);
             cg->stopUsingRegister(condReg);
             }
-         /* Re-enable this code new hardware update
+         /* Re-enable this code with new hardware update
          if (cg->comp()->target().cpu.isAtLeast(OMR_PROCESSOR_PPC_P9))
             {
             generateTrg1Src2Instruction(cg, TR::InstOpCode::modsw, node, trgReg, dividendReg, divisorReg);
@@ -2258,7 +2258,7 @@ TR::Register *lrem64Evaluator(TR::Node *node, TR::CodeGenerator *cg)
          {
          TR::Register *divisorReg = cg->evaluate(secondChild);
          trgReg = cg->allocateRegister();
-         /* Re-enable this code new hardware update
+         /* Re-enable this code with new hardware update
          if (cg->comp()->target().cpu.isAtLeast(OMR_PROCESSOR_PPC_P9))
             {
             generateTrg1Src2Instruction(cg, TR::InstOpCode::modsd, node, trgReg, dividendReg, divisorReg);
@@ -2316,7 +2316,7 @@ TR::Register *lrem64Evaluator(TR::Node *node, TR::CodeGenerator *cg)
             generateConditionalBranchInstruction(cg, TR::InstOpCode::beq, node, doneLabel, condReg);
             cg->stopUsingRegister(condReg);
             }
-         /* Re-enable this code new hardware update
+         /* Re-enable this code with new hardware update
          if (cg->comp()->target().cpu.isAtLeast(OMR_PROCESSOR_PPC_P9))
             {
             generateTrg1Src2Instruction(cg, TR::InstOpCode::modsd, node, trgReg, dividendReg, divisorReg);
