@@ -808,11 +808,15 @@ TR::Node * constrainLongBitCount(OMR::ValuePropagation *vp, TR::Node *node);
 #define inolzVPHandler constrainIntegerNumberOfLeadingZeros
 #define inotzVPHandler constrainIntegerNumberOfTrailingZeros
 #define ipopcntVPHandler constrainIntegerBitCount
+#define icompressbitsVPHandler constrainChildren
+#define iexpandbitsVPHandler constrainChildren
 #define lhbitVPHandler constrainLongHighestOneBit
 #define llbitVPHandler constrainLongLowestOneBit
 #define lnolzVPHandler constrainLongNumberOfLeadingZeros
 #define lnotzVPHandler constrainLongNumberOfTrailingZeros
 #define lpopcntVPHandler constrainLongBitCount
+#define lcompressbitsVPHandler constrainChildren
+#define lexpandbitsVPHandler constrainChildren
 #define sbyteswapVPHandler constrainChildren
 #define ibyteswapVPHandler constrainChildren
 #define lbyteswapVPHandler constrainChildren

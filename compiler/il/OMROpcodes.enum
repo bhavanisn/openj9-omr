@@ -8150,6 +8150,38 @@ OPCODE_MACRO(\
    /* .description          = */ \
 )
 OPCODE_MACRO(\
+   /* .operation            = */ icompressbits, \
+   /* .name                 = */ "icompressbits", \
+   /* .properties1          = */ 0, \
+   /* .properties2          = */ ILProp2::SupportedForPRE, \
+   /* .properties3          = */ 0, \
+   /* .properties4          = */ 0, \
+   /* .dataType             = */ TR::Int32, \
+   /* .typeProperties       = */ ILTypeProp::Size_4 | ILTypeProp::Integer, \
+   /* .childProperties      = */ TWO_SAME_CHILD(TR::Int32), \
+   /* .swapChildrenOpCode   = */ TR::BadILOp, \
+   /* .reverseBranchOpCode  = */ TR::BadILOp, \
+   /* .booleanCompareOpCode = */ TR::BadILOp, \
+   /* .ifCompareOpCode      = */ TR::BadILOp, \
+   /* .description          = compress bits: equivalent to calling Integer.compress(a, b) */
+)
+OPCODE_MACRO(\
+   /* .operation            = */ iexpandbits, \
+   /* .name                 = */ "iexpandbits", \
+   /* .properties1          = */ 0, \
+   /* .properties2          = */ ILProp2::SupportedForPRE, \
+   /* .properties3          = */ 0, \
+   /* .properties4          = */ 0, \
+   /* .dataType             = */ TR::Int32, \
+   /* .typeProperties       = */ ILTypeProp::Size_4 | ILTypeProp::Integer, \
+   /* .childProperties      = */ TWO_SAME_CHILD(TR::Int32), \
+   /* .swapChildrenOpCode   = */ TR::BadILOp, \
+   /* .reverseBranchOpCode  = */ TR::BadILOp, \
+   /* .booleanCompareOpCode = */ TR::BadILOp, \
+   /* .ifCompareOpCode      = */ TR::BadILOp, \
+   /* .description          = expand bits: equivalent to calling Integer.expand(a, b) */
+)
+OPCODE_MACRO(\
    /* .opcode               = */ lhbit, \
    /* .name                 = */ "lhbit", \
    /* .properties1          = */ 0, \
@@ -8228,6 +8260,38 @@ OPCODE_MACRO(\
    /* .booleanCompareOpCode = */ TR::BadILOp, \
    /* .ifCompareOpCode      = */ TR::BadILOp, \
    /* .description          = */ \
+)
+OPCODE_MACRO(\
+   /* .operation            = */ lcompressbits, \
+   /* .name                 = */ "lcompressbits", \
+   /* .properties1          = */ 0, \
+   /* .properties2          = */ ILProp2::SupportedForPRE, \
+   /* .properties3          = */ 0, \
+   /* .properties4          = */ 0, \
+   /* .dataType             = */ TR::Int64, \
+   /* .typeProperties       = */ ILTypeProp::Size_8 | ILTypeProp::Integer, \
+   /* .childProperties      = */ TWO_SAME_CHILD(TR::Int64), \
+   /* .swapChildrenOpCode   = */ TR::BadILOp, \
+   /* .reverseBranchOpCode  = */ TR::BadILOp, \
+   /* .booleanCompareOpCode = */ TR::BadILOp, \
+   /* .ifCompareOpCode      = */ TR::BadILOp, \
+   /* .description          = compress bits: equivalent to calling Long.compress(a, b) */
+)
+OPCODE_MACRO(\
+   /* .operation            = */ lexpandbits, \
+   /* .name                 = */ "lexpandbits", \
+   /* .properties1          = */ 0, \
+   /* .properties2          = */ ILProp2::SupportedForPRE, \
+   /* .properties3          = */ 0, \
+   /* .properties4          = */ 0, \
+   /* .dataType             = */ TR::Int64, \
+   /* .typeProperties       = */ ILTypeProp::Size_8 | ILTypeProp::Integer, \
+   /* .childProperties      = */ TWO_SAME_CHILD(TR::Int64), \
+   /* .swapChildrenOpCode   = */ TR::BadILOp, \
+   /* .reverseBranchOpCode  = */ TR::BadILOp, \
+   /* .booleanCompareOpCode = */ TR::BadILOp, \
+   /* .ifCompareOpCode      = */ TR::BadILOp, \
+   /* .description          = expand bits: equivalent to calling Long.expand(a, b) */
 )
 OPCODE_MACRO(\
    /* .opcode               = */ sbyteswap, \

@@ -489,11 +489,15 @@ class OMR_EXTENSIBLE TreeEvaluator: public OMR::TreeEvaluator
    static TR::Register *inolzEvaluator(TR::Node *node, TR::CodeGenerator *cg);
    static TR::Register *inotzEvaluator(TR::Node *node, TR::CodeGenerator *cg);
    static TR::Register *ipopcntEvaluator(TR::Node *node, TR::CodeGenerator *cg);
+   static TR::Register *icompressbitsEvaluator(TR::Node *node, TR::CodeGenerator *cg);
+   static TR::Register *iexpandbitsEvaluator(TR::Node *node, TR::CodeGenerator *cg);
    static TR::Register *lhbitEvaluator(TR::Node *node, TR::CodeGenerator *cg);
    static TR::Register *llbitEvaluator(TR::Node *node, TR::CodeGenerator *cg);
    static TR::Register *lnolzEvaluator(TR::Node *node, TR::CodeGenerator *cg);
    static TR::Register *lnotzEvaluator(TR::Node *node, TR::CodeGenerator *cg);
    static TR::Register *lpopcntEvaluator(TR::Node *node, TR::CodeGenerator *cg);
+   static TR::Register *lcompressbitsEvaluator(TR::Node *node, TR::CodeGenerator *cg);
+   static TR::Register *lexpandbitsEvaluator(TR::Node *node, TR::CodeGenerator *cg);
    static TR::Register *bbitpermuteEvaluator(TR::Node *node, TR::CodeGenerator *cg);
    static TR::Register *sbitpermuteEvaluator(TR::Node *node, TR::CodeGenerator *cg);
    static TR::Register *ibitpermuteEvaluator(TR::Node *node, TR::CodeGenerator *cg);

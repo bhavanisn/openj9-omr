@@ -4795,6 +4795,45 @@ OMR::X86::TreeEvaluator::bitpermuteEvaluator(TR::Node *node, TR::CodeGenerator *
    return resultReg;
    }
 
+TR::Register*
+OMR::X86::TreeEvaluator::compressbitsEvaluator(TR::Node *node, TR::CodeGenerator *cg)
+   {
+   bool nodeIs64Bit = TR::TreeEvaluator::getNodeIs64Bit(node, cg);
+   TR::Node *srcNode = node->getFirstChild();
+   TR::Node *maskNode = node->getSecondChild();
+   TR::Register *srcReg = cg->evaluate(srcNode);
+   TR::Register *resultReg = TR::TreeEvaluator::intOrLongClobberEvaluate(maskNode, nodeIs64Bit, cg);
+
+   generateRegRegRegInstruction(TR::InstOpCode::PEXTRegRegReg(nodeIs64Bit), node, resultReg, srcReg, resultReg, cg);
+
+   cg->stopUsingRegister(srcReg);
+
+   node->setRegister(resultReg);
+   cg->decReferenceCount(srcNode);
+   cg->decReferenceCount(maskNode);
+
+   return resultReg;
+   }
+
+TR::Register*
+OMR::X86::TreeEvaluator::expandbitsEvaluator(TR::Node *node, TR::CodeGenerator *cg)
+   {
+   bool nodeIs64Bit = TR::TreeEvaluator::getNodeIs64Bit(node, cg);
+   TR::Node *srcNode = node->getFirstChild();
+   TR::Node *maskNode = node->getSecondChild();
+   TR::Register *srcReg = cg->evaluate(srcNode);
+   TR::Register *resultReg = TR::TreeEvaluator::intOrLongClobberEvaluate(maskNode, nodeIs64Bit, cg);
+
+   generateRegRegRegInstruction(TR::InstOpCode::PDEPRegRegReg(nodeIs64Bit), node, resultReg, srcReg, resultReg, cg);
+
+   cg->stopUsingRegister(srcReg);
+
+   node->setRegister(resultReg);
+   cg->decReferenceCount(srcNode);
+   cg->decReferenceCount(maskNode);
+
+   return resultReg;
+   }
 
 // mask evaluators
 TR::Register*

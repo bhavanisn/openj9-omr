@@ -2281,6 +2281,18 @@ OMR::X86::I386::TreeEvaluator::ipopcntEvaluator(TR::Node *node, TR::CodeGenerato
    }
 
 TR::Register*
+OMR::X86::I386::TreeEvaluator::icompressbitsEvaluator(TR::Node *node, TR::CodeGenerator *cg)
+   {
+   return TR::TreeEvaluator::badILOpEvaluator(node, cg);
+   }
+
+TR::Register*
+OMR::X86::I386::TreeEvaluator::iexpandbitsEvaluator(TR::Node *node, TR::CodeGenerator *cg)
+   {
+   return TR::TreeEvaluator::badILOpEvaluator(node, cg);
+   }
+
+TR::Register*
 OMR::X86::I386::TreeEvaluator::lhbitEvaluator(TR::Node *node, TR::CodeGenerator *cg)
    {
    return TR::TreeEvaluator::badILOpEvaluator(node, cg);
@@ -2306,6 +2318,18 @@ OMR::X86::I386::TreeEvaluator::lnotzEvaluator(TR::Node *node, TR::CodeGenerator 
 
 TR::Register*
 OMR::X86::I386::TreeEvaluator::lpopcntEvaluator(TR::Node *node, TR::CodeGenerator *cg)
+   {
+   return TR::TreeEvaluator::badILOpEvaluator(node, cg);
+   }
+
+TR::Register*
+OMR::X86::I386::TreeEvaluator::lcompressbitsEvaluator(TR::Node *node, TR::CodeGenerator *cg)
+   {
+   return TR::TreeEvaluator::badILOpEvaluator(node, cg);
+   }
+
+TR::Register*
+OMR::X86::I386::TreeEvaluator::lexpandbitsEvaluator(TR::Node *node, TR::CodeGenerator *cg)
    {
    return TR::TreeEvaluator::badILOpEvaluator(node, cg);
    }

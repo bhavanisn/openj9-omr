@@ -670,11 +670,15 @@
 #define inolzSimplifierHandler dftSimplifier
 #define inotzSimplifierHandler dftSimplifier
 #define ipopcntSimplifierHandler dftSimplifier
+#define icompressbitsSimplifierHandler dftSimplifier
+#define iexpandbitsSimplifierHandler dftSimplifier
 #define lhbitSimplifierHandler dftSimplifier
 #define llbitSimplifierHandler dftSimplifier
 #define lnolzSimplifierHandler dftSimplifier
 #define lnotzSimplifierHandler dftSimplifier
 #define lpopcntSimplifierHandler dftSimplifier
+#define lcompressbitsSimplifierHandler dftSimplifier
+#define lexpandbitsSimplifierHandler dftSimplifier
 #define sbyteswapSimplifierHandler dftSimplifier
 #define ibyteswapSimplifierHandler dftSimplifier
 #define lbyteswapSimplifierHandler dftSimplifier
